@@ -1,0 +1,20 @@
+use Kampus
+use admin
+db.createUser({
+... user:"andi",
+... pwd:"anditopsecret",
+... roles:[{role:"dbAdmin",db:"Kampus"}]})
+db.createUser({
+... user:"budi",
+... pwd:"buditopsecret",
+... roles:[{role:"readWrite",db:"Kampus"}]})
+use Kampus
+db.createCollection("Dosen")
+db.Dosen.insertOne({"nama":"Caca","usia":28,"asal":"Jakarta", "bidang":"Fisika Astrologi", "titel":"S2", "status":"Honorer", "nip":123, "matkul":["Metrologi","Kosmologi","Kalkulus"]})
+db.Dosen.insertOne({"nama":"Dedi","usia":29,"asal":"Yogyakarta", "bidang":"FisikaTerapan", "titel":"S3", "status":"PNS", "nip":456, "matkul":["Instrumentasi","Elektronika","Fisika Dasar"]})
+db.Dosen.insertOne({"nama":"Euis","usia":30,"asal":"Bandung", "bidang":"Fisika Teoritik", "titel":"S1", "status":"Honorer", "nip":789, "matkul":["Fisika Dasar","Fisika Modern","Kalkulus"]}
+db.createCollection("Mahasiswa")
+db.Mahasiswa.insertOne({"nama":"Faza", "usia":19,"asal":"Aceh","prodi":"Fisika","angkatan":2017,"nim":123})
+db.Mahasiswa.insertOne({"nama":"Gilang", "usia":20,"asal":"Semarang","prodi":"Fisika","angkatan":2017,"nim":456})
+db.Mahasiswa.insertOne({"nama":"Hanafi", "usia":19,"asal":"Makassar","prodi":"Fisika","angkatan":2017,"nim":789})
+
